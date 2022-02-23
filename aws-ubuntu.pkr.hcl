@@ -8,9 +8,9 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "learn-packer-linux-aws_redis_curl"
+  ami_name      = "learn-packer-linux-{{timestamp | clean_ami_name}}"
   instance_type = "t2.micro"
-  region        = "us-west-2"
+  region        = "us-west-2"g
   source_ami_filter {
     filters = {
       name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
